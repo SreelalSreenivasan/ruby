@@ -1,0 +1,2 @@
+class SregisterController < ApplicationController
+end

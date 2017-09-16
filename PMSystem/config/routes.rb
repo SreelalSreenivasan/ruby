@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   get 'login/l_index'
   
   resources :registrations
-
+  resources :sregister
+  resources :rregister
   get 'welcome/index'
   get 'login'=>'login#l_index' 
   get 'recr'=>'login#recruiter'  

@@ -1,0 +1,2 @@
+class RregisterController < ApplicationController
+end

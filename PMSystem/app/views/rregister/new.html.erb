@@ -49,20 +49,52 @@
     			  <%#= form.submit "Select" %>
   			  </p-->
 			<%# end %>
-			<%= render 'form' %>
-			<%#= form_with scope: :registrations, url: registrations_path, local: true do |form| %>
-				<!--p>
-					<%#= form.label :username %><br>
-					<%#= form.text_field :uname %>
+			<%#= render 'form' %>
+			<%= form_with scope: :sregister, local: true do |form| %>
+				<p>
+					<%= form.label :cin_number %><br>
+					<%= form.text_field :cinno %>
+				</p>
+			
+				<p>
+					<%= form.label :name %><br>
+					<%= form.text_field :name %>
+				</p>
+			
+				<p>
+					<%= form.label :cgpa %><br>
+					<%= form.text_field :cgpa %>
+				</p>
+			
+				<p>
+					<%= form.label :branch %><br>
+					<%= form.text_field :branch %>
+				</p>
+			
+				<p>
+					<%= form.label :contact_number %><br>
+					<%= form.text_field :cno %>
+				</p>
+			
+				<p>
+					<%= form.label :mail_id %><br>
+					<%= form.text_field :mail %>
+				</p>
+
+				<p>
+					<%= form.label :password %><br>
+					<%= form.password_field :pword1 %>
+				</p>
+			
+				<p>
+					<%= form.label :confirm_password %><br>
+					<%= form.password_field :pword2 %>
 				</p>
 				<p>
-					<%#= form.label :password %><br>
-					<%#= form.password_field :pword %>
-				</p>
-				<p>
-					<%#= form.submit %>
+					<%= form.submit "REGISTER" %>
 				</p-->
-			<%# end %>
+			<% end %>
 		</div>
 	</div>
 </body>
+

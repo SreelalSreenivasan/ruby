@@ -1,0 +1,22 @@
+<%= form_with scope: :registrations, url: registrations_path, local: true do |f| %>
+	<p>
+		<%= f.label :type %>
+		<%= f.radio_button:type, 'student', :checked => true %>Student
+		<%= f.radio_button:type, 'recruiter' %>Recruiter
+	</p>
+	<p>
+		<%= f.submit "Select" %>
+	</p>
+	<!--p>
+		<%#= f.label :username %><br>
+		<%#= f.text_field :uname %>
+	</p>
+	<p>
+		<%#= f.label :password %><br>
+		<%#= f.password_field :pword %>
+	</p>
+	<p>
+		<%#= f.submit %>
+	</p-->
+<% end %>
+

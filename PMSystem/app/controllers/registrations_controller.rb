@@ -16,16 +16,23 @@ class RegistrationsController < ApplicationController
 	end
 	def create
 		#render plain: params[:registrations].inspect
-		@user = User.new(user_params)
-		salt=rand(10000)
-		@user.salt=salt
+		#@user = User.new(user_params)
+		#salt=rand(10000)
+		#@user.salt=salt
 		#puts @user.pword
-		@user.pword=get_hash(@user.pword,salt.to_s) 
-  		@user.save
-  		redirect_to login_l_index_path
+		#@user.pword=get_hash(@user.pword,salt.to_s) 
+		if(user_params[:type] == "student")
+			redirect_to new_sregister_path
+		elsif(user_params[:type] == "recruiter")
+			redirect_to new_rregister_path
+		end
+  		#@user.save
+  	        #redirect_to root_path
 	end
 	private
 		def user_params
-			params.require(:registrations).permit(:uname,:pword)
+			#params.require(:registrations).permit(:uname,:pword,:type)
+		
+			params.require(:registrations).permit(:type)
 		end
 end
