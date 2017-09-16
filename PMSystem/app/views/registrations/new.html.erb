@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>placementer</title>
+
+	<!-- Google Fonts -->
+	<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700|Lato:400,100,300,700,900' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="css/animate.css">
+	<!-- Custom Stylesheet -->
+	<link rel="stylesheet" href="css/style.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<div class="tab">
+ 
+  <button class="tablinks" onclick="window.location='/'">Home</button>
+
+  <button class="tablinks" onclick="window.location='root'">Placement Record</button>
+ 
+  <button class="tablinks" onclick="window.location='root'">Recruiters</button>
+   
+  <button class="tablinks" onclick="window.location='root'">Contact Us</button>
+
+  <button class="tablinks" onclick="window.location='login'">Login</button>
+</div>
+<!--div>
+<!--p class="sign_in"><%#= link_to "Admin Login", new_user_session_path %>
+
+
+</div-->
+
+<body>
+	<div class="container">
+			<div class="register-box animated fadeInUp">
+			<div class="box-header">
+				<h2>Register</h2>
+			</div>
+			<%#= form_with scope: :registrations, url: registrations_path, local: true do |form| %>
+			  <!--p>
+			    <b>Type</b>
+			    <%#= form.radio_button :type,'student' %>Student
+			    <%#= form.radio_button :type,'recruiter' %>Recruiter<br/>
+			  </p>
+ 
+  			  <p>
+    			  <%#= form.submit "Select" %>
+  			  </p-->
+			<%# end %>
+			<%= form_with scope: :registrations, url: registrations_path, local: true do |form| %>
+				<p>
+					<%= form.label :username %><br>
+					<%= form.text_field :uname %>
+				</p>
+				<p>
+					<%= form.label :password %><br>
+					<%= form.password_field :pword %>
+				</p>
+				<p>
+					<%= form.submit %>
+				</p>
+			<% end %>
+		</div>
+	</div>
+</body>
