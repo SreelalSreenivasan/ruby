@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cinno: MyString
+  company: MyString
+  name: MyString
+  link: MyString
+  cno: MyString
+  mail: MyString
+  salary: MyString
+
+two:
+  cinno: MyString
+  company: MyString
+  name: MyString
+  link: MyString
+  cno: MyString
+  mail: MyString
+  salary: MyString

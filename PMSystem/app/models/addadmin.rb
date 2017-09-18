@@ -1,0 +1,2 @@
+class Addadmin < ApplicationRecord
+end

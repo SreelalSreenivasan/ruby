@@ -1,0 +1,21 @@
+<%= form_tag addadmin_index_path do %>
+				<p>
+					<%= label_tag :employee_number %><br>
+					<%= text_field_tag :empid %>
+				</p>
+			
+				<p>
+					<%= label_tag :name %><br>
+					<%= text_field_tag :name %>
+				</p>
+					
+				<p>
+					<%= label_tag :contact %><br>
+					<%= text_area_tag :contact %>
+				</p>
+			
+				<p>
+					<%= submit_tag "ADD" %>
+				</p>
+<% end %>
+

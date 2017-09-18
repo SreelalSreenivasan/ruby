@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :registrations
   resources :sregister
   resources :rregister
+  resources :addadmin
   get 'welcome/index'
   get 'login'=>'login#l_index' 
   get 'recr'=>'login#recruiter'  

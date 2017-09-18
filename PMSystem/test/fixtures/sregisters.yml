@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  rno: MyString
+  name: MyString
+  cgpa: MyString
+  branch: MyString
+  cno: MyString
+  mail: MyString
+  salary: MyString
+
+two:
+  rno: MyString
+  name: MyString
+  cgpa: MyString
+  branch: MyString
+  cno: MyString
+  mail: MyString
+  salary: MyString

@@ -15,7 +15,7 @@ class RegistrationsController < ApplicationController
 		end 
 	end
 	def create
-		#render plain: params[:registrations].inspect
+		#render plain: params[:type].inspect
 		#@user = User.new(user_params)
 		#salt=rand(10000)
 		#@user.salt=salt
