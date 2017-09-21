@@ -31,7 +31,7 @@ class RregisterController < ApplicationController
 			redirect_to root_path
 		else		
 			@u.pword=pword1
-			@u.type="recruiter"
+			@u.utype="recruiter"
 			salt=rand(10000)
 			@u.salt=salt
 			#puts @user.pword

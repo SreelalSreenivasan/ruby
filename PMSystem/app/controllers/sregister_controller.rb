@@ -35,7 +35,7 @@ class SregisterController < ApplicationController
 			redirect_to root_path
 		else		
 			@u.pword=pword1
-			@u.type="student"
+			@u.utype="student"
 			salt=rand(10000)
 			@u.salt=salt
 			#puts @user.pword

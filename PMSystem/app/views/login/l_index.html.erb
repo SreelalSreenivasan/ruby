@@ -8,9 +8,9 @@
 	<!-- Google Fonts -->
 	<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700|Lato:400,100,300,700,900' rel='stylesheet' type='text/css'>
 
-	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="stylesheets/animate.css">
 	<!-- Custom Stylesheet -->
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="stylesheets/style.css">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 </head>
@@ -35,13 +35,13 @@
 <body>
 	<div class="container">
 		<div class="top">
-			<h1 id="title" class="hidden"><span id="logo">Placementer</span></span></h1>
+			<h1 id="title" class="hidden"><span id="logo">Placementor</span></span></h1>
 		</div>
 		<div class="login-box animated fadeInUp">
 			<div class="box-header">
 				<h2>Log In</h2>
 			</div>
-			<label for="username">Username</label>
+			<!--label for="username">Username</label>
 			<br/>
 			<input type="text" id="username">
 			<br/>
@@ -54,7 +54,9 @@
 			<br/>
 			<button type="submit" onclick="window.location='registrations/new'">Sign Up</button>
 			<br/>
-			<a href="#"><p class="small">Forgot your password?</p></a>
+			<a href="#"><p class="small">Forgot your password?</p></a-->
+			<%= render 'form' %>
+			<button type="submit" onclick="window.location='registrations/new'">Sign Up</button>
 		</div>
 	</div>
 </body>

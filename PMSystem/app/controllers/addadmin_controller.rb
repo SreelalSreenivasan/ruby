@@ -41,13 +41,15 @@ class AddadminController < ApplicationController
 
 		end		
 		#@u.pword=pword1
-		@u.type="admin"
+		pword1=@u.pword
+		@u.utype="admin"
 		salt=rand(10000)
 		@u.salt=salt
 			#puts @user.pword
 		@u.pword=get_hash(@u.pword,salt.to_s)			
 		@a.save
 		@u.save
+		flash[:Success] = "New admin's password is #{pword1}"
 		redirect_to root_path
 		#end
 	end

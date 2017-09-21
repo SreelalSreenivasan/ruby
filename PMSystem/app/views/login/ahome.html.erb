@@ -3,14 +3,14 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>placementer</title>
+	<title>placementor</title>
 
 	<!-- Google Fonts -->
 	<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700|Lato:400,100,300,700,900' rel='stylesheet' type='text/css'>
 
-	<link rel="stylesheet" href="animate.css">
+	<link rel="stylesheet" href="stylesheets/animate.css">
 	<!-- Custom Stylesheet -->
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="stylesheets/style.css">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 </head>
@@ -18,13 +18,13 @@
  
   <button class="tablinks" onclick="window.location='/'">Home</button>
 
-  <button class="tablinks" onclick="window.location='record'">Placement Record</button>
+  <button class="tablinks" onclick="window.location='record'">Add Records</button>
  
-  <button class="tablinks" onclick="window.location='recr'">Recruiters</button>
+  <button class="tablinks" onclick="window.location='recr'">Add Recruiters</button>
    
-  <button class="tablinks" onclick="window.location='contact'">Contact Us</button>
+  <button class="tablinks" onclick="window.location='/addadmin/new'">Add Admin</button>
 
-  <button class="tablinks" onclick="window.location='login'">Login</button>
+  <button class="tablinks" onclick="window.location='logout'">Logout</button>
 </div>
 <div>
 <!--p class="sign_in"><%#= link_to "Admin Login", new_user_session_path %>
@@ -54,4 +54,20 @@
 			<a href="#"><p class="small">Forgot your password?</p></a>
 		</div>
 	</div-->
+		<div>
+			<center>
+				<p>
+  					<strong>Employee Number:</strong>
+  					<%= @admin.empid %>
+				</p>
+				<p>
+  					<strong>Name:</strong>
+  					<%= @admin.name %>
+				</p>
+				<p>
+  					<strong>Contact:</strong>
+  					<%= @admin.contact %>
+				</p>
+			</center>
+		</div>
 </body>

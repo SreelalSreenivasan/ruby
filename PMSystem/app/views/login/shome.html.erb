@@ -3,14 +3,14 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>placementer</title>
+	<title>placementor</title>
 
 	<!-- Google Fonts -->
 	<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700|Lato:400,100,300,700,900' rel='stylesheet' type='text/css'>
 
-	<link rel="stylesheet" href="animate.css">
+	<link rel="stylesheet" href="stylesheets/animate.css">
 	<!-- Custom Stylesheet -->
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="stylesheets/style.css">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 </head>
@@ -22,9 +22,9 @@
  
   <button class="tablinks" onclick="window.location='recr'">Recruiters</button>
    
-  <button class="tablinks" onclick="window.location='contact'">Contact Us</button>
+  <button class="tablinks" onclick="window.location='contact'">Notifications</button>
 
-  <button class="tablinks" onclick="window.location='login'">Login</button>
+  <button class="tablinks" onclick="window.location='logout'">Logout</button>
 </div>
 <div>
 <!--p class="sign_in"><%#= link_to "Admin Login", new_user_session_path %>
@@ -54,4 +54,32 @@
 			<a href="#"><p class="small">Forgot your password?</p></a>
 		</div>
 	</div-->
+		<div>
+			<center>
+				<p>
+  					<strong>Register Number:</strong>
+  					<%= @student.rno %>
+				</p>
+				<p>
+  					<strong>Name:</strong>
+  					<%= @student.name %>
+				</p>
+				<p>
+  					<strong>CGPA:</strong>
+  					<%= @student.cgpa %>
+				</p>
+				<p>
+  					<strong>Branch:</strong>
+  					<%= @student.branch %>
+				</p>
+				<p>
+  					<strong>Phone:</strong>
+  					<%= @student.cno %>
+				</p>
+				<p>
+  					<strong>Email Id:</strong>
+  					<%= @student.mail %>
+				</p>
+			</center>
+		</div>
 </body>

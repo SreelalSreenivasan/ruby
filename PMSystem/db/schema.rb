@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170917151801) do
+ActiveRecord::Schema.define(version: 20170921094259) do
 
   create_table "addadmins", force: :cascade do |t|
     t.string "empid"
@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 20170917151801) do
     t.datetime "updated_at", null: false
     t.string "salt"
     t.string "type"
+    t.string "utype"
   end
 
 end
