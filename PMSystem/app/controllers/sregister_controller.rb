@@ -25,24 +25,30 @@ class SregisterController < ApplicationController
 		@s.cgpa=params[:cgpa]
 		@s.branch=params[:branch]
 		@s.cno=params[:cno]
-		@s.mail=params[:mail]
+		if @s.cno.length<10
+			flash[:error]="Phone number is not valid"
+			redirect_to root_path
+		else
+			@s.mail=params[:mail]
 		
-		#@s.con=params[:cno]
-		pword1=params[:pword1]
-		pword2=params[:pword2]
-		if not pword1.eql?(pword2)
-			flash[:error]="Password mismatch"
-			redirect_to root_path
-		else		
-			@u.pword=pword1
-			@u.utype="student"
-			salt=rand(10000)
-			@u.salt=salt
-			#puts @user.pword
-			@u.pword=get_hash(@u.pword,salt.to_s)			
-			@s.save
-			@u.save
-			redirect_to root_path
+			#@s.con=params[:cno]
+			pword1=params[:pword1]
+			pword2=params[:pword2]
+			if not pword1.eql?(pword2)
+				flash[:error]="Password mismatch"
+				redirect_to root_path
+			else		
+				@u.pword=pword1
+				@u.utype="student"
+				salt=rand(10000)
+				@u.salt=salt
+				#puts @user.pword
+				@u.pword=get_hash(@u.pword,salt.to_s)	
+				@u.status="no"		
+				@s.save
+				@u.save
+				redirect_to root_path
+			end
 		end
 	end
 	#private

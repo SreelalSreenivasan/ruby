@@ -21,24 +21,30 @@ class RregisterController < ApplicationController
 		@r.name=params[:name]
 		@r.link=params[:link]
 		@r.cno=params[:cno]
-		@r.mail=params[:mail]
+		if @r.cno.length<10
+			flash[:error]="Phone number is invalid"
+			redirect_to root_path
+		else
+			@r.mail=params[:mail]
 		
-		#@r.con=params[:cno]
-		pword1=params[:pword1]
-		pword2=params[:pword2]
-		if not pword1.eql?(pword2)
-			flash[:error]="Password mismatch"
-			redirect_to root_path
-		else		
-			@u.pword=pword1
-			@u.utype="recruiter"
-			salt=rand(10000)
-			@u.salt=salt
-			#puts @user.pword
-			@u.pword=get_hash(@u.pword,salt.to_s)			
-			@r.save
-			@u.save
-			redirect_to root_path
+			#@r.con=params[:cno]
+			pword1=params[:pword1]
+			pword2=params[:pword2]
+			if not pword1.eql?(pword2)
+				flash[:error]="Password mismatch"
+				redirect_to root_path
+				else		
+				@u.pword=pword1
+				@u.utype="recruiter"
+				salt=rand(10000)
+				@u.salt=salt
+					#puts @user.pword
+				@u.pword=get_hash(@u.pword,salt.to_s)	
+				@u.status="no"		
+				@r.save
+				@u.save
+				redirect_to root_path
+			end
 		end
-	end
+	end	
 end

@@ -26,21 +26,28 @@ class LoginController < ApplicationController
 		#puts uname
 		#puts pword
 		@l=User.where(:uname=>uname)
-		if(@l.size>0)
+		if(@l.size==0)
+			flash[:error]="Username doesn't exists"	
+			redirect_to login_path
+		elsif(@l.size>0)
 			@l=@l[0]
-		end
-		if(@l.pword==get_hash(pword,@l.salt.to_s))
-			session[:userdata]=@l
-			if(@l.utype=="student")
-				redirect_to shome_path
-			elsif(@l.utype=="recruiter")
-				redirect_to rhome_path
-			elsif(@l.utype=="admin")
-				redirect_to ahome_path
+			if(@l.pword==get_hash(pword,@l.salt.to_s)and @l.status=="yes")
+				session[:userdata]=@l
+				if(@l.utype=="student")
+					redirect_to shome_path
+				elsif(@l.utype=="recruiter")
+					redirect_to rhome_path
+				elsif(@l.utype=="admin")
+					redirect_to ahome_path
+				end
 			end
-		#else
-		#	flash[:error]="Username/Password mismatch"
-		#	redirect_to login_path
+			#else
+			#	flash[:error]="Username/Password mismatch"
+			#	redirect_to login_path
+			#end
+		else
+			flash[:error]="User under verification"
+			redirect_to login_path	
 		end
 	end
   end

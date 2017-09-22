@@ -16,23 +16,17 @@
 </head>
 <div class="tab">
  
-  <button class="tablinks" onclick="window.location='ahome'">Home</button>
+  <button class="tablinks" onclick="window.location='/ahome'">Home</button>
 
   <button class="tablinks" onclick="window.location='record'">Add Records</button>
  
   <button class="tablinks" onclick="window.location='recr'">Add Recruiters</button>
    
   <button class="tablinks" onclick="window.location='/addadmin/new'">Add Admin</button>
-
-  <button class="tablinks" onclick="window.location='/manage_user/show'">Message</button>
   
-  <button class="tablinks" onclick="window.location='/manage_user/show'">Manage Users</button>
+  <button class="tablinks" onclick="window.location='/manage_user/new'">Manage Users</button>
 
-  <button class="tablinks" onclick="window.location='/current'">Manage Current Records</button>
-	
-  <button class="tablinks" onclick="window.location='/manage_user/new'">Manage Company Salary</button>	
-
-  <button class="tablinks" onclick="window.location='logout'">Logout</button>
+  <button class="tablinks" onclick="window.location='/logout'">Logout</button>
 </div>
 <div>
 <!--p class="sign_in"><%#= link_to "Admin Login", new_user_session_path %>
@@ -42,14 +36,11 @@
 
 <body>
 	<div class="container">
-		<div class="top">
-			<h1 id="title" class="hidden"><span id="logo">Placementor</span></span></h1>
-		</div>
-		<!--div class="login-box animated fadeInUp">
+		<div class="register-box animated fadeInUp">
 			<div class="box-header">
-				<h2>Log In</h2>
+				<h2>Company Salary</h2>
 			</div>
-			<label for="username">Username</label>
+             			<!--label for="username">Username</label>
 			<br/>
 			<input type="text" id="username">
 			<br/>
@@ -59,23 +50,9 @@
 			<br/>
 			<button type="submit">Sign In</button>
 			<br/>
-			<a href="#"><p class="small">Forgot your password?</p></a>
+			<a href="#"><p class="small">Forgot your password?</p></a-->
+			<%= render 'form' %>
 		</div>
-	</div-->
-		<div>
-			<center>
-				<p>
-  					<strong>Employee Number:</strong>
-  					<%= @admin.empid %>
-				</p>
-				<p>
-  					<strong>Name:</strong>
-  					<%= @admin.name %>
-				</p>
-				<p>
-  					<strong>Contact:</strong>
-  					<%= @admin.contact %>
-				</p>
-			</center>
 		</div>
+	</div>
 </body>

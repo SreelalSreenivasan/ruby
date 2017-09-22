@@ -1,0 +1,15 @@
+<%= form_tag  manage_user_index_path do  %>
+				<p>
+					<%= label_tag :cinno %><br>
+					<%= text_field_tag :cinno %>
+				</p>
+			
+				<p>
+					<%= label_tag :salary %><br>
+					<%= text_field_tag :salary %>
+				</p>
+			
+				<p>
+					<%= submit_tag "Update" %>
+				</p>
+<% end %>

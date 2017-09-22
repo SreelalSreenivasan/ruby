@@ -46,7 +46,8 @@ class AddadminController < ApplicationController
 		salt=rand(10000)
 		@u.salt=salt
 			#puts @user.pword
-		@u.pword=get_hash(@u.pword,salt.to_s)			
+		@u.pword=get_hash(@u.pword,salt.to_s)	
+		@u.status="yes"		
 		@a.save
 		@u.save
 		flash[:Success] = "New admin's password is #{pword1}"
