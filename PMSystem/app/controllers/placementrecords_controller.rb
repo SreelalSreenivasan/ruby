@@ -6,7 +6,7 @@ def create
     @p.company= params[:company]
     @p.offers= params[:offers]
     @p.save
-    redirect_to ahome_path
+    redirect_to new_placementrecord_path
 
   end
 

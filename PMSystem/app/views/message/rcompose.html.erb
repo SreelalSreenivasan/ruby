@@ -1,7 +1,62 @@
-<br>
-<h2> Compose </h2>
+<!DOCTYPE html>
+<html lang="en">
 
-<%= form_tag message_rcompose_path do %>
+<head>
+	<meta charset="utf-8">
+	<title>placementor</title>
+
+	<!-- Google Fonts -->
+	<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700|Lato:400,100,300,700,900' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="stylesheets/animate.css">
+	<!-- Custom Stylesheet -->
+	<link rel="stylesheet" href="stylesheets/style.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<div class="tab">
+ 
+  <button class="tablinks" onclick="window.location='rhome'">Home</button>
+
+  <button class="tablinks" onclick="window.location='/show3'">Placement record</button>
+ 
+  <button class="tablinks" onclick="window.location='mrshow3'">recruiters</button>
+   
+  <button class="tablinks" onclick="window.location='message_rcompose'">Message</button>
+
+  <button class="tablinks" onclick="window.location='logout'">Logout</button>
+</div>
+<div>
+<!--p class="sign_in"><%#= link_to "Admin Login", new_user_session_path %>
+
+
+</div-->
+
+<body>
+	<div class="container">
+		<!--div class="top">
+			<h1 id="title" class="hidden"><span id="logo">Placementor</span></span></h1>
+		</div-->
+		<div class="register-box animated fadeInUp">
+			<div class="box-header">
+				<h2>Compose</h2>
+			</div>
+			<!--label for="username">Username</label>
+			<br/>
+			<input type="text" id="username">
+			<br/>
+			<label for="password">Password</label>
+			<br/>
+			<input type="password" id="password">
+			<br/>
+			<button type="submit">Sign In</button>
+			<br/>
+			<a href="#"><p class="small">Forgot your password?</p></a>
+		</div>
+	</div-->
+		<div>
+			<center>
+				<%= form_tag message_rcompose_path do %>
 
 	<p>
 		<%= label_tag :title %><br>
@@ -20,3 +75,8 @@
 	</p>
 	<%= link_to 'Inbox', message_inbox2_path %>
 <% end %>
+			</center>
+		</div>
+</body>
+
+

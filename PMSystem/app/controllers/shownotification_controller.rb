@@ -15,6 +15,8 @@ class ShownotificationController < ApplicationController
 
     def apply
         @obj = Response.new
+       
+
         temp = 1000000
         cin = params[:id]
         @r = Rregister.new
@@ -31,15 +33,29 @@ class ShownotificationController < ApplicationController
             eligible = false
         end
 
-        if(eligible==true)
-            @obj.sid = @s.rno
-            @obj.sname = @s.name
-            @obj.cno = @r.cinno
-            @obj.cname = @r.name
+        @obj.sid = @s.rno
+        @obj.sname = @s.name
+        @obj.cno = @r.cinno
+        @obj.cname = @r.name
+        #puts @obj.sid
+        #puts @obj.cno
+        @cond = Response.new
+        @cond = Response.where(:sid => @obj.sid) 
+        @cond =  @cond.where(:cno => @obj.cno)
+        
+        applied = false
+
+        if(@cond.size > 0)
+            applied=true
+        end
+
+        if(eligible==true and applied==false)            
             @obj.save
             flash[:success]="Eligible"
-        else
-            flash[:success]="Not eligible"
+        elsif (eligible==true and applied==true)
+            flash[:success]="Already applied"
+        else 
+            flash[:success]="Not Eligible"
         end
             
         
