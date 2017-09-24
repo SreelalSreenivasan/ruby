@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>placementor</title>
+
+	<!-- Google Fonts -->
+	<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700|Lato:400,100,300,700,900' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="stylesheets/animate.css">
+	<!-- Custom Stylesheet -->
+	<link rel="stylesheet" href="stylesheets/style.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<div class="tab">
+ 
+  <button class="tablinks" onclick="window.location='rhome'">Home</button>
+
+  <button class="tablinks" onclick="window.location='/show3'">Placement record</button>
+
+  <button class="tablinks" onclick="window.location='recr'">recruiters</button>
+   
+  <button class="tablinks" onclick="window.location='contact'">Message</button>
+
+  <button class="tablinks" onclick="window.location='logout'">Logout</button>
+</div>
+<div>
+<!--p class="sign_in"><%#= link_to "Admin Login", new_user_session_path %>
+
+
+</div-->
+
+<body>
+	<div class="container">
+		<!--div class="top">
+			<h1 id="title" class="hidden"><span id="logo">Placementor</span></span></h1>
+		</div-->
+		<div class="register-box animated fadeInUp">
+			<div class="box-header">
+				<h2>Update Records</h2>
+			</div>
+			<!--label for="username">Username</label>
+			<br/>
+			<input type="text" id="username">
+			<br/>
+			<label for="password">Password</label>
+			<br/>
+			<input type="password" id="password">
+			<br/>
+			<button type="submit">Sign In</button>
+			<br/>
+			<a href="#"><p class="small">Forgot your password?</p></a>
+		</div>
+	</div-->
+	<% @p.each do |x| %>
+	<p>
+     <Strong> year: </Strong> <%= x.year %>    &nbsp;&nbsp;
+     <Strong> company: </Strong> <%= x.company %>    &nbsp;&nbsp;
+     <Strong> offers: </Strong> <%=x.offers %>   &nbsp;&nbsp;
+
+	</p>
+<% end %>
+</body>
+
+
+
+

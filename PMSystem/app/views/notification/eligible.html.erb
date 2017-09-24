@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>placementer</title>
+
+	<!-- Google Fonts -->
+	<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700|Lato:400,100,300,700,900' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="stylesheets/animate.css">
+	<!-- Custom Stylesheet -->
+	<link rel="stylesheet" href="stylesheets/style.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<div class="tab">
+ 
+  <button class="tablinks" onclick="window.location='/'">Home</button>
+
+  <button class="tablinks" onclick="window.location='root'">Placement Record</button>
+ 
+  <button class="tablinks" onclick="window.location='root'">Recruiters</button>
+   
+  <button class="tablinks" onclick="window.location='root'">Contact Us</button>
+
+  <button class="tablinks" onclick="window.location='login'">Login</button>
+</div>
+<!--div>
+<!--p class="sign_in"><%#= link_to "Admin Login", new_user_session_path %>
+
+
+</div-->
+
+<body>
+	<div class="container">
+			<div class="register-box animated fadeInUp">
+			<div class="box-header">
+				<h2> Notification </h2>
+			</div>
+			<center>
+            <%= link_to 'New notification', new_notification_path %>
+            <%= link_to 'Appication', action:"eligible" %>
+            <table>
+                <tr>
+                    <th><strong>Reg. NO: </strong></th>
+                    <th><strong>Student: </strong></th>
+                    <th><strong>CNO: </strong></th>
+                    <th><strong>Company Name: </strong></th>
+                </tr>
+
+                <% @obj.each do |x| %>
+    
+                <tr>
+                    <td><%= x.sid %></td>
+                    <td><%= x.sname %></td>
+                    <td><%= x.cno %></td>
+                    <td><%= x.cname %></td>
+                      
+                </tr>
+                <% end %>
+
+            </table>
+		</center>
+		</div>
+	</div>
+</body>
+

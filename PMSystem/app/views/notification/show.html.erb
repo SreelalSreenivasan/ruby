@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>placementer</title>
+
+	<!-- Google Fonts -->
+	<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700|Lato:400,100,300,700,900' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="stylesheets/animate.css">
+	<!-- Custom Stylesheet -->
+	<link rel="stylesheet" href="stylesheets/style.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<div class="tab">
+ 
+  <button class="tablinks" onclick="window.location='/'">Home</button>
+
+  <button class="tablinks" onclick="window.location='root'">Placement Record</button>
+ 
+  <button class="tablinks" onclick="window.location='root'">Recruiters</button>
+   
+  <button class="tablinks" onclick="window.location='root'">Contact Us</button>
+
+  <button class="tablinks" onclick="window.location='login'">Login</button>
+</div>
+<!--div>
+<!--p class="sign_in"><%#= link_to "Admin Login", new_user_session_path %>
+
+
+</div-->
+
+<body>
+	<div class="container">
+			<div class="register-box animated fadeInUp">
+			<div class="box-header">
+				<h2>  Notification </h2>
+			</div>
+			
+            
+		<center>
+            <p> 
+                <strong>Date: </strong>
+                <%= @n.date %><br>
+
+                <strong>Title: </strong>
+                <%= @n.title %><br>
+
+                <strong>Content: </strong>
+                <%= @n.content %><br>
+                
+                
+                <strong>Recruiter ID: </strong>
+                <%= @n.cin %><br> 
+                
+
+           </p>
+		</center>
+
+           <%= link_to 'Back', notification_index_path %>
+		</div>
+	</div>
+</body>
+
+
+
+
+

@@ -10,12 +10,54 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170922064446) do
+ActiveRecord::Schema.define(version: 20170924101752) do
 
   create_table "addadmins", force: :cascade do |t|
     t.string "empid"
     t.string "name"
     t.string "contact"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "inboxes", force: :cascade do |t|
+    t.text "CIN"
+    t.text "title"
+    t.text "content"
+    t.string "tofrom"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "mrecruiters", force: :cascade do |t|
+    t.string "name"
+    t.string "logopath"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "notifications", force: :cascade do |t|
+    t.text "title"
+    t.text "content"
+    t.text "cin"
+    t.text "date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "records", force: :cascade do |t|
+    t.string "year"
+    t.string "company"
+    t.string "offers"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "responses", force: :cascade do |t|
+    t.text "sid"
+    t.text "sname"
+    t.text "cno"
+    t.text "cname"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

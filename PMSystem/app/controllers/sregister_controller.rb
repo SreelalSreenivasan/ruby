@@ -42,6 +42,7 @@ class SregisterController < ApplicationController
 				@u.utype="student"
 				salt=rand(10000)
 				@u.salt=salt
+				@s.salary="0"
 				#puts @user.pword
 				@u.pword=get_hash(@u.pword,salt.to_s)	
 				@u.status="no"		

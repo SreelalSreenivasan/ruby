@@ -1,0 +1,17 @@
+<center><h1>RECRUITERS LIST</h1></center>
+<% @up.each do |x| %>
+	<center>
+	<table border="1" width='30%'>
+
+		<tr>
+	    	<td width='50%'>
+				<center><%= x.name %></center>
+			</td>
+			<td width='50%'>
+
+		 		<center><img src="<%= x.logopath %>"  , alt: "logo" , height='170' , width='170'></img></center>
+			</td>
+		</tr>
+	</table>
+	</center>
+<% end %>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>placementor</title>
+
+	<!-- Google Fonts -->
+	<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700|Lato:400,100,300,700,900' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="stylesheets/animate.css">
+	<!-- Custom Stylesheet -->
+	<link rel="stylesheet" href="stylesheets/style.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<div class="tab">
+ 
+  <button class="tablinks" onclick="window.location='ahome'">Home</button>
+
+  <button class="tablinks" onclick="window.location='/placementrecords/new'">Add Records</button>
+ 
+  <button class="tablinks" onclick="window.location='/manage_recruiter/new'">Add Recruiters</button>
+
+  <button class="tablinks" onclick="window.location='/notification/new'">Notification</button>
+   
+  <button class="tablinks" onclick="window.location='/addadmin/new'">Add Admin</button>
+
+  <button class="tablinks" onclick="window.location='message_acompose'">Message</button>
+  
+  <button class="tablinks" onclick="window.location='/manage_user/show'">Manage Users</button>
+
+  <button class="tablinks" onclick="window.location='/current'">Manage Current Records</button>
+	
+  <button class="tablinks" onclick="window.location='/manage_user/new'">Manage Company Salary</button>	
+
+  <button class="tablinks" onclick="window.location='/logout'">Logout</button>
+</div>
+<div>
+<!--p class="sign_in"><%#= link_to "Admin Login", new_user_session_path %>
+
+
+</div-->
+
+<body>
+	<div class="container">
+		<!--div class="top">
+			<h1 id="title" class="hidden"><span id="logo">Placementor</span></span></h1>
+		</div-->
+		<div class="register-box animated fadeInUp">
+			<div class="box-header">
+				<h2>Add a Recruiter</h2>
+			</div>
+			<!--label for="username">Username</label>
+			<br/>
+			<input type="text" id="username">
+			<br/>
+			<label for="password">Password</label>
+			<br/>
+			<input type="password" id="password">
+			<br/>
+			<button type="submit">Sign In</button>
+			<br/>
+			<a href="#"><p class="small">Forgot your password?</p></a>
+		</div>
+	</div-->
+		<div>
+			<center>
+				<form action="/manage_recruiter" method="POST" enctype="multipart/form-data"> 
+<!--action is to redirect to manage_recruiter controller--and hence to default view(action) defined as create-->
+<!--method to post to manage_recruiter controller create action-->
+<!--enctype to encrypt the form-data using multipart-->
+<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+	<p>
+	<%= label_tag "Company Name" %>
+	<%= text_field_tag :name %>
+	</p>
+	<p>
+	<%= label_tag "Logo" %>
+	<%= file_field_tag :pimage %>
+	</p>
+	<%= submit_tag "Add Item" %>
+</form>
+
+<!--When a form is submitted, the fields of the form are sent to Rails as parameters. These parameters can then be referenced inside the controller actions, typically to perform a particular task-->
+			</center>
+		</div>
+</body>
+
+

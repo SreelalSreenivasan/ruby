@@ -1,0 +1,2 @@
+class Mrecruiter < ApplicationRecord
+end

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  CIN: MyText
+  title: MyText
+  content: MyText
+  tofrom: MyString
+
+two:
+  CIN: MyText
+  title: MyText
+  content: MyText
+  tofrom: MyString

@@ -38,6 +38,7 @@ class RregisterController < ApplicationController
 				@u.utype="recruiter"
 				salt=rand(10000)
 				@u.salt=salt
+				@r.salary="0"
 					#puts @user.pword
 				@u.pword=get_hash(@u.pword,salt.to_s)	
 				@u.status="no"		

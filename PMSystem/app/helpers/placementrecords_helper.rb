@@ -1,0 +1,2 @@
+module PlacementrecordsHelper
+end

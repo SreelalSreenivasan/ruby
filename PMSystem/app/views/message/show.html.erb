@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>placementor</title>
+
+	<!-- Google Fonts -->
+	<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700|Lato:400,100,300,700,900' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="stylesheets/animate.css">
+	<!-- Custom Stylesheet -->
+	<link rel="stylesheet" href="stylesheets/style.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<div class="tab">
+ 
+  <button class="tablinks" onclick="window.location='/ahome'">Home</button>
+
+  <button class="tablinks" onclick="window.location='/placementrecords/new'">Add Records</button>
+ 
+  <button class="tablinks" onclick="window.location='recr'">Add Recruiters</button>
+   
+  <button class="tablinks" onclick="window.location='/addadmin/new'">Add Admin</button>
+
+  <button class="tablinks" onclick="window.location='message_acompose'">Message</button>
+  
+  <button class="tablinks" onclick="window.location='/manage_user/show'">Manage Users</button>
+
+  <button class="tablinks" onclick="window.location='/current'">Manage Current Records</button>
+	
+  <button class="tablinks" onclick="window.location='/manage_user/new'">Manage Company Salary</button>	
+
+  <button class="tablinks" onclick="window.location='/logout'">Logout</button>
+</div>
+<div>
+<!--p class="sign_in"><%#= link_to "Admin Login", new_user_session_path %>
+
+
+</div-->
+
+<body>
+	<div class="container">
+		<!--div class="top">
+			<h1 id="title" class="hidden"><span id="logo">Placementor</span></span></h1>
+		</div-->
+		<div class="register-box animated fadeInUp">
+			<div class="box-header">
+				<h2>Compose</h2>
+			</div>
+			<!--label for="username">Username</label>
+			<br/>
+			<input type="text" id="username">
+			<br/>
+			<label for="password">Password</label>
+			<br/>
+			<input type="password" id="password">
+			<br/>
+			<button type="submit">Sign In</button>
+			<br/>
+			<a href="#"><p class="small">Forgot your password?</p></a>
+		</div>
+	</div-->
+		<div>
+			<center>
+				
+<p>
+	<strong> CIN: </strong>
+	<%= @a.CIN %>
+</p>
+
+<p>
+	<strong>Title:</strong>
+	<%= @a.title %>
+</p>
+ 
+<p>
+	<strong>Text:</strong>
+	<%= @a.content %>
+</p>
+
+<p>
+	<%= @a.tofrom %>
+</p>
+			</center>
+	<%= link_to 'Back',  message_acompose_path %>
+		</div>
+</body>
+
+
+
+<br>
+<h2> Compose </h2>
+
+

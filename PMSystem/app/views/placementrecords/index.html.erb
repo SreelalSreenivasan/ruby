@@ -1,0 +1,9 @@
+<h1>National Institue of Technology, Calicut <br> Placements </h1>
+<% @p.each do |x| %>
+<p>
+     <Strong> year: </Strong> <%= x.year %>    &nbsp;&nbsp;
+     <Strong> company: </Strong> <%= x.company %>    &nbsp;&nbsp;
+     <Strong> offers: </Strong> <%=x.offers %>   &nbsp;&nbsp;
+
+</p>
+<% end %>
