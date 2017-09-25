@@ -1,12 +1,17 @@
 class MessageController < ApplicationController
 	def create
 		@m = Inbox.new
-		@m.CIN = params[:cin]
-		@m.title = params[:title]
-		@m.tofrom = params[:tofrom]
-		@m.content = params[:content]
-		@m.save
-		redirect_to ahome_path
+		if(params[:cin].empty?)
+			flash[:error]="CIN Missing"
+			redirect_to message_acompose_path
+		else
+			@m.CIN = params[:cin]
+			@m.title = params[:title]
+			@m.tofrom = params[:tofrom]
+			@m.content = params[:content]
+			@m.save
+			redirect_to message_inbox_path
+		end
 	end
 
 	def inbox
@@ -27,7 +32,7 @@ class MessageController < ApplicationController
 		@m.tofrom = "to"
 		@m.content = params[:content]
 		@m.save
-		redirect_to rhome_path
+		redirect_to message_inbox2_path
 	end
 	
 	def show
@@ -41,5 +46,20 @@ class MessageController < ApplicationController
 		#cin = session[:userdata]['uname']
 		@a = Inbox.where(:id=>id)
 		@a=@a[0]
+	end
+	def reply
+		cin = params[:CIN]
+		@a = Inbox.where(:CIN=>cin)
+		@a = @a[0]
+	end
+	
+	def replymessage
+		@m = Inbox.new
+		@m.CIN = params[:cin]
+		@m.title = params[:title]
+		@m.tofrom = params[:tofrom]
+		@m.content = params[:content]
+		@m.save
+		redirect_to ahome_path
 	end
 end

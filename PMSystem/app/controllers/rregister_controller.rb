@@ -25,6 +25,10 @@ class RregisterController < ApplicationController
   		#	flash[:error]="Some fields are missing"
 		#	redirect_to new_rregister_path
 		#else
+		if(params[:cinno].empty? or params[:pword1].empty? or params[:pword2].empty?)
+			flash[:error]="Fields can't be blank"
+			redirect_to new_rregister_path
+		else
 			if @r.cno.length<10
 				flash[:error]="Phone number is invalid"
 				redirect_to new_rregister_path
@@ -52,6 +56,6 @@ class RregisterController < ApplicationController
 					redirect_to root_path
 				end
 			end
-		#end
+		end
 	end	
 end

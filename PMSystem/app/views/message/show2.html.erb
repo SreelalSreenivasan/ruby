@@ -55,28 +55,31 @@
 		</div>
 	</div-->
 		<div>
-			<center>
-				
-<p>
-	<strong> CIN: </strong>
-	<%= @a.CIN %>
-</p>
+					<center>
+		
+						<p>
+							<% if @a.tofrom == "to" %>
+								<b><b><b>To</b></b></b> Admin
+							<% else %>
+								<b><b><b>From</b></b></b> Admin
+							<% end %>
+						</p>
 
-<p>
-	<strong>Title:</strong>
-	<%= @a.title %>
-</p>
- 
-<p>
-	<strong>Text:</strong>
-	<%= @a.content %>
-</p>
+						<p>
+							<strong>Title:</strong>
+							<%= @a.title %>
+						</p>
+						 
+						<p>
+							<strong>Text:</strong>
+							<%= @a.content %>
+						</p>
 
-<p>
-	<%= @a.tofrom %>
-</p>
-			</center>
-	<%= link_to 'Back',  message_inbox2_path %>
+					</center>
+					<%= link_to 'Back',  message_inbox2_path %>
+					<% if @a.tofrom == 'from' %>
+						<%= link_to 'Reply',  message_rcompose_path %>
+					<% end %>
 		</div>
 </body>
 

@@ -16,7 +16,7 @@
 </head>
 <div class="tab">
  
-  <button class="tablinks" onclick="window.location='/ahome'">Home</button>
+  <button class="tablinks" onclick="window.location='ahome'">Home</button>
 
   <button class="tablinks" onclick="window.location='/placementrecords/new'">Add Records</button>
  
@@ -49,7 +49,7 @@
 		</div-->
 		<div class="register-box animated fadeInUp">
 			<div class="box-header">
-				<h2>Compose</h2>
+				<h2>Inbox</h2>
 			</div>
 			<!--label for="username">Username</label>
 			<br/>
@@ -66,35 +66,33 @@
 	</div-->
 		<div>
 			<center>
+				<%= form_tag message_reply_path do %>
+					<p>
+						CIN: <%= @a.CIN %>
+						<%= hidden_field_tag :cin, @a.CIN %>
+					</p>
 
-				<p>
-					<% if @a.tofrom == 'to' %>
-						<b><b><b>From:</b></b></b> <%= @a. CIN %>
-					<% else %>
-						<b><b><b>To:</b></b></b> <%= @a. CIN %>
-					<% end %>
-				</p>
+					<p>
+						<%= label_tag "title:" %>
+						<%= text_field_tag :title %>
+					</p>
 
-				<p>
-					<strong>Title:</strong>
-					<%= @a.title %>
-				</p>
-				 
-				<p>
-					<strong>Text:</strong>
-					<%= @a.content %>
-				</p>
-						
-				<%= link_to 'Back',  message_inbox_path %>		&nbsp;&nbsp;&nbsp;
-				<% if @a.tofrom == 'to' %>
-					<%= link_to 'Reply', action: "reply", CIN:@a.CIN %>
+					<p>
+						<%= label_tag :content %><br>
+						<%= text_area_tag :content %>
+					</p>
+	
+					<%= hidden_field_tag :tofrom, "from" %>
+	
+					<p>
+						<%= submit_tag "Send Message" %>
+					</p>
 				<% end %>
+				<%= link_to 'Inbox', message_inbox_path %>
 			</center>
 		</div>
 </body>
 
 
-
-
-
+<br>
 

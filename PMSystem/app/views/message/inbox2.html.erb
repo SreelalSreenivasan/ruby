@@ -56,25 +56,29 @@
 	</div-->
 		<div>
 			<center>
-				<%= link_to 'Compose New Message', message_rcompose_path %>
-
-
-
-<table>
-  <tr>
-    <th>CIN</th>
-    <th>Title</th>
-    <th></th>
-  </tr>
- 
-  <% @s.each do |x| %>
-    <tr>
-      <td><%= x.CIN %></td>
-      <td><%= x.title %></td>
-       <td><%= link_to 'Open', action:"show2", id:x.id %></td>
-    </tr>
-  <% end %>
-</table>	
+				<table>
+				  <tr>
+				  	<th></th>
+					<th>Title</th>
+					<th></th>
+				  </tr>
+				 
+				  <% @s.each do |x| %>
+					<tr>
+					  <td>
+					  	<% if x.tofrom == "to" %>
+							<b><b><b>To</b></b></b> Admin
+						<% else %>
+							<b><b><b>From</b></b></b> Admin
+						<% end %>
+					  </td>
+					  <td><%= x.title %></td>
+					   <td><%= link_to 'Open', action:"show2", id:x.id %></td>
+					</tr>
+				  <% end %>
+				</table>
+				<br><br>
+				<%= link_to 'Back',  message_rcompose_path %>	
 			</center>
 		</div>
 </body>

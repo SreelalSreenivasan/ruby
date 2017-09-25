@@ -30,6 +30,10 @@ class SregisterController < ApplicationController
   		#	flash[:error]="Some fields are missing"
 		#	redirect_to new_sregister_path
 		#else
+		if(params[:rno].empty? or params[:pword1].empty? or params[:pword2].empty?)
+			flash[:error]="Fields can't be blank"
+			redirect_to new_sregister_path
+		else
 			if @s.cno.length<10
 				flash[:error]="Phone number is not valid"
 				redirect_to new_sregister_path
@@ -56,7 +60,7 @@ class SregisterController < ApplicationController
 					redirect_to root_path
 				end
 			end
-		#end
+		end
 	end
 	#private
 	#	def sreg_params

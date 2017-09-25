@@ -27,6 +27,9 @@ Rails.application.routes.draw do
   post 'message_acompose' => 'message#create'
   
   post 'message_rcompose' => 'message#rcreate'
+
+  get 'message_show' => 'message#reply'
+  post 'message_reply' => 'message#replymessage'
   
   get 'message_show' => 'message#show'
   get 'message_show2' => 'message#show2'

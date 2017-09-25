@@ -20,7 +20,7 @@
 
   <button class="tablinks" onclick="window.location='/placementrecords/new'">Add Records</button>
  
-  <button class="tablinks" onclick="window.location='recr'">Add Recruiters</button>
+  <button class="tablinks" onclick="window.location='/manage_recruiter/new'">Add Recruiters</button>
    
   <button class="tablinks" onclick="window.location='/addadmin/new'">Add Admin</button>
 
@@ -66,25 +66,29 @@
 	</div-->
 		<div>
 			<center>
-				<%= link_to 'Compose New Message', message_rcompose_path %>
-
-
-
-<table>
-  <tr>
-    <th>CIN</th>
-    <th>Title</th>
-    <th></th>
-  </tr>
- 
-  <% @s.each do |x| %>
-    <tr>
-      <td><%= x.CIN %></td>
-      <td><%= x.title %></td>
-       <td><%= link_to 'Open', action:"show", id:x.id %></td>
-    </tr>
-  <% end %>
-</table>	
+				<table>
+				  <tr>
+					<th></th>
+					<th>Title</th>
+					<th></th>
+				  </tr>
+				 
+				  <% @s.each do |x| %>
+					<tr>
+					  <td>
+					  	<% if x.tofrom == "to" %>
+							<b><b><b>From</b></b></b> <%= x.CIN%>
+						<% else %>
+							<b><b><b>To</b></b></b> <%= x.CIN%>
+						<% end %>
+					  </td>
+					  <td><%= x.title %></td>
+					   <td><%= link_to 'Open', action:"show", id:x.id %></td>
+					</tr>
+				  <% end %>
+				</table>
+				<br><br>
+				<%= link_to 'Back',  message_acompose_path %>	
 			</center>
 		</div>
 </body>
