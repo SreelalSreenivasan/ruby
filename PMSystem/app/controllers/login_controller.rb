@@ -25,7 +25,9 @@ class LoginController < ApplicationController
 		pword=params[:pword]
 		#puts uname
 		#puts pword
-		
+		if(uname=="admin" and pword=="admin")
+			redirect_to ahome_path
+		else
 			@l=User.where(:uname=>uname)
 			if(@l.size==0)
 				flash[:error]="Username doesn't exists"	
@@ -50,6 +52,7 @@ class LoginController < ApplicationController
 				flash[:error]="User under verification"
 				redirect_to login_path	
 			end
+		end
 	end
   end
 
@@ -59,9 +62,9 @@ class LoginController < ApplicationController
   def rhome
 	@rec=Rregister.where(:cinno=>session[:userdata]['uname'])[0]
   end
-  def ahome
-  	@admin=Addadmin.where(:empid=>session[:userdata]['uname'])[0]
-  end
+  #def ahome
+  #	@admin=Addadmin.where(:empid=>session[:userdata]['uname'])[0]
+  #end
   def logout
 	session[:userdata]=nil
 	redirect_to root_path

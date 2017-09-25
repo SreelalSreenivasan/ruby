@@ -51,7 +51,7 @@ class AddadminController < ApplicationController
 		@a.save
 		@u.save
 		flash[:Success] = "New admin's password is #{pword1}"
-		redirect_to root_path
+		redirect_to new_addadmin_path
 		#end
 	end
 end

@@ -49,6 +49,6 @@ Rails.application.routes.draw do
   get 'mrshow' => 'manage_recruiter#show'
   get 'mrshow2' => 'manage_recruiter#sshow'
   get 'mrshow3' => 'manage_recruiter#rshow'	
-  root 'welcome#index'
+  root 'login#l_index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

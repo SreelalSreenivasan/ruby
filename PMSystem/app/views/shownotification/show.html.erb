@@ -38,10 +38,10 @@
 			<div class="box-header">
 				<h2>  Notification </h2>
 			</div>
-		<center>	
-            	<%= form_tag shownotification_index_path do %>
+			
+            <%= form_tag shownotification_index_path do %>
 
-           	 <p> 
+            <p> 
                 <strong>Date: </strong>
                 <%= @n.date %><br>
 
@@ -50,16 +50,19 @@
                 
                 <strong>Content: </strong>
                 <%= @n.content %><br>
-            	<% end %>    
-            	<%= link_to 'Apply' ,action:"apply", id:@n.cin %>
-	
-            	</p>
+            <% end %>    
+
+            <% if not ((@n.cin).nil? or (@n.cin.empty?) or (@n.cin.blank?)) %>
+                <%= link_to 'Apply' ,action:"apply", id:@n.cin %>
+            <% end %> 
+
+            </p>
 
             
 
-            	<%= link_to 'Back', shownotification_index_path %>
+            <%= link_to 'Back', shownotification_index_path %>
 
-            </center>
+            
 		</div>
 	</div>
 </body>

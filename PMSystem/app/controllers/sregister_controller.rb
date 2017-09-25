@@ -25,32 +25,38 @@ class SregisterController < ApplicationController
 		@s.cgpa=params[:cgpa]
 		@s.branch=params[:branch]
 		@s.cno=params[:cno]
-		if @s.cno.length<10
-			flash[:error]="Phone number is not valid"
-			redirect_to root_path
-		else
-			@s.mail=params[:mail]
 		
-			#@s.con=params[:cno]
-			pword1=params[:pword1]
-			pword2=params[:pword2]
-			if not pword1.eql?(pword2)
-				flash[:error]="Password mismatch"
-				redirect_to root_path
-			else		
-				@u.pword=pword1
-				@u.utype="student"
-				salt=rand(10000)
-				@u.salt=salt
-				@s.salary="0"
-				#puts @user.pword
-				@u.pword=get_hash(@u.pword,salt.to_s)	
-				@u.status="no"		
-				@s.save
-				@u.save
-				redirect_to root_path
+		#if @s.rno=" " or @s.uname=" " or @s.name=" " or @s.cgpa=" " or @s.branch=" " or @s.cno=" "
+  		#	flash[:error]="Some fields are missing"
+		#	redirect_to new_sregister_path
+		#else
+			if @s.cno.length<10
+				flash[:error]="Phone number is not valid"
+				redirect_to new_sregister_path
+			else
+				@s.mail=params[:mail]
+				pword1=params[:pword1]
+				pword2=params[:pword2]
+				#@s.con=params[:cno]
+				if not pword1.eql?(pword2)
+					flash[:error]="Password mismatch"
+					redirect_to new_sregister_path
+				else		
+					@u.pword=pword1
+					@u.utype="student"
+					salt=rand(10000)
+					@u.salt=salt
+					@s.salary="0"
+					#puts @user.pword
+					@u.pword=get_hash(@u.pword,salt.to_s)	
+					@u.status="no"		
+					@s.save
+					@u.save
+					flash[:success]="Registration completed"
+					redirect_to root_path
+				end
 			end
-		end
+		#end
 	end
 	#private
 	#	def sreg_params
